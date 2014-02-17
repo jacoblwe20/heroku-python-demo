@@ -65,7 +65,7 @@ git init
 After all the this settup you are now about ready to deploy the application up to Heroku. First tho you need to create an app on their service.
 
 ```
-heroku create:app {app_name}
+heroku apps:create {app_name}
 ```
 
 This should create the app on Heroku's server, and also add a git remote `heroku` to this repo.
@@ -82,5 +82,12 @@ git push heroku master
 
 You should see a stream of deploy information in your console, and then a url to see where you app is living.
 
+## Debugging
 
+Not all pushes go so easily but luckly there is a easy way to see what is going on with your app while it is running on heroku.
 
+```
+heroku logs --tail
+```
+
+This will stream the logs from your app so you can see potential issues.
