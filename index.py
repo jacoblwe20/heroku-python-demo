@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify
 app = Flask(__name__)
 
@@ -26,4 +27,4 @@ def not_found():
     return '404 Not Found try <a href="/api/v0/tasks.json">/api/v0/tasks.json</a>';
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(port= int(os.getenv('PORT', 5000)))
